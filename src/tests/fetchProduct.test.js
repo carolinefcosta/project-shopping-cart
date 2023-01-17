@@ -27,4 +27,9 @@ describe('Teste a função fetchProduct', () => {
   it('Teste se, ao chamar a função fetchProduct sem argumento, retorna um erro.', async () => {
     await expect(fetchProduct()).rejects.toEqual(new Error('ID não informado'));
   });
+
+  it('Teste se, ao chamar a função fetchProduct com argumento inválido, retorna um erro.', async () => {
+    fetchProduct('PARAMETRO1NVALID0');
+    await expect(fetchProduct()).rejects.toEqual(new Error('ID não informado'));
+  });
 });
