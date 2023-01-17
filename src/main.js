@@ -7,33 +7,59 @@ const sectionProducts = document.getElementsByClassName('products')[0];
 
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 
-const carregando = async () => {
-  const h2 = document.createElement('h2');
-  h2.className = 'loading';
-  h2.innerText = 'carregando...';
-  sectionProducts.appendChild(h2);
+const loading = () => {
+  const paragrafoLoading = document.createElement('p');
+  paragrafoLoading.className = 'loading';
+  paragrafoLoading.innerText = 'carregando...';
+  sectionProducts.appendChild(paragrafoLoading);
 };
 
-const functionError = (error) => {
-  const h2 = document.querySelector('.loading');
-  if (!error) {
-    sectionProducts.removeChild(h2);
-  } else {
-    h2.className = 'error';
-    h2.innerText = 'Algum erro ocorreu, recarregue a paǵina e tente novamente';
+const finishLoading = () => {
+  if (sectionProducts.hasChildNodes()) {
+    sectionProducts.removeChild(sectionProducts.children[0]);
   }
 };
 
-const adicionandoProdutos = async (itens) => {
-  itens.forEach((produto) => {
-    const produtoInd = createProductElement(produto);
-    sectionProducts.appendChild(produtoInd);
+const addProducts = async () => {
+  loading();
+  const produtos = await fetchProductsList('computador');
+  produtos.forEach((produto) => {
+    const cadaItem = createProductElement(produto);
+    sectionProducts.appendChild(cadaItem);
   });
+  finishLoading();
 };
 
-try {
-  const produtos = await fetchProductsList('computador');
-  adicionandoProdutos(produtos);
-} catch (error) {
-  functionError(error);
-}
+addProducts();
+
+// const loading = async () => {
+//   const h2 = document.createElement('h2');
+//   h2.className = 'loading';
+//   h2.innerText = 'loading...';
+//   sectionProducts.appendChild(h2);
+// };
+
+// const functionError = (error) => {
+//   const h2 = document.getElementsByClassName('loading')[0];
+//   if (!error) {
+//     sectionProducts.removeChild(h2);
+//   } else {
+//     h2.className = 'error';
+//     h2.innerText = 'Algum erro ocorreu, recarregue a paǵina e tente novamente';
+//   }
+// };
+
+// const adicionandoProdutos = async (itens) => {
+//   loading();
+//   itens.forEach((produto) => {
+//     const produtoInd = createProductElement(produto);
+//     sectionProducts.appendChild(produtoInd);
+//   });
+// };
+
+// try {
+//   const produtos = await fetchProductsList('computador');
+//   adicionandoProdutos(produtos);
+// } catch (error) {
+//   functionError(error);
+// }
