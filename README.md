@@ -1,10 +1,10 @@
 Shopping Cart
 
-## 💻 Projeto
+## 💻  Projeto
 
 O shopping-cart é um projeto desenvolvido no curso da [Trybe](https://www.betrybe.com/) que utiliza a API do Mercado Livre para criar uma listagem de produtos e um carrinho de compras totalmente dinâmico!
 
-## 🚀 Tecnologias usadas:
+## 🚀  Tecnologias:
 
 - HTML
 - CSS
@@ -12,9 +12,8 @@ O shopping-cart é um projeto desenvolvido no curso da [Trybe](https://www.betry
 - DOM
 - LocalStorage
 - Testes Unitários e Assíncronos
-- API
-
-## 📌 Habilidades desenvolvidas
+-  API
+## 📌  Habilidades Desenvolvidas:
 
 Nesse projeto, fui capaz de:
 
