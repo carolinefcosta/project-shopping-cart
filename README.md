@@ -19,4 +19,5 @@ Nesse projeto, fui capaz de:
 - Utilizar os conhecimentos sobre JavaScript, CSS e HTML;
 - Trabalhar com funções assíncronas;
 - Implementar testes unitários.
-![image](https://user-images.githubusercontent.com/115182342/220615194-ddd93a5d-7ac6-427b-8a67-0d3f2889f083.png)
+
+![image](https://user-images.githubusercontent.com/115182342/220615339-3a3852bd-f7dc-4ae0-98cc-01e4ed826b83.png)
