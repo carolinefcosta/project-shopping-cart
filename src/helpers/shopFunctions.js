@@ -141,5 +141,6 @@ window.onload = () => {
     const products = await fetchProduct(item);
     const items = createCartProductElement(products);
     productsCart.appendChild(items);
+    sumPrice();
   });
 };
